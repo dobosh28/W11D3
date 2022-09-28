@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import Cart from './components/Cart';
 import ProduceList from './components/ProduceList';
 import { populateProduce } from './store/produce';
+import { addItem } from './store/cart';
 
 function App() {
   const [showCart, setShowCart] = useState(false);
