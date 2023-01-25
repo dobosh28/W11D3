@@ -2,7 +2,8 @@ import { useCoffeeContext } from '../context/CoffeeContext';
 
 
 const SetCoffeeBean = ({ coffeeBeans }) => {
-  const {coffeeBean, setCoffeeBeanId} = useCoffeeContext(coff);
+
+  const {coffeeBean, setCoffeeBeanId} = useCoffeeContext();
   
   const handleChange = (e) => {
     setCoffeeBeanId(e.target.value)
@@ -11,9 +12,9 @@ const SetCoffeeBean = ({ coffeeBeans }) => {
   return (
     <div className="set-coffee-bean">
       <h2>Select a Coffee Bean</h2>
-      <select name="coffee-bean" onClick={handleChange}>
+      <select name="coffee-bean" value={coffeeBean.id} onChange={handleChange}>
         {coffeeBeans.map(bean => (
-          <option
+          <option 
             key={bean.id}
             value={bean.id}
           >
